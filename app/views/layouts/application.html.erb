@@ -9,20 +9,22 @@
   </head>
 
   <body>
+    <nav class="navbar">
+    <%= link_to "My Super Fancy Blog", articles_path, class: 'blog_name' %>
+      <h6>
+        <% if logged_in? %>
+          <%= "logged in as #{current_user.email}" %>
+          <%= link_to "logout", logout_path, class: 'log' %>
+        <% else %>
+          <%= link_to "login", login_path, class: 'log' %>
+        <% end %>
+      </h6>
+    </nav>
   	<p class="flash"><%= flash.notice %></p>
     <div id="container">
       <div id="content">
         <%= yield %>
       </div>
     </div>
-    <hr>
-    <h6>
-      <% if logged_in? %>
-        <%= "logged in as #{current_user.email}" %>
-        <%= link_to "(logout)", logout_path %>
-      <% else %>
-        <%= link_to "(login)", login_path %>
-      <% end %>
-    </h6>
   </body>
 </html>
