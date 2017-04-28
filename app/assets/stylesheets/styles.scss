@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,6 +49,7 @@ body {
   color: #414141;
   margin: 0;
 
+/*navbar*/
   .navbar {
     position: relative;
     display: block;
@@ -56,71 +57,175 @@ body {
     width: 100%;
     height: 75px;
     background-color: #414141;
+    color: #fff;
 
     .blog_name {
       position: relative;
       display: inline-block;
-      left: 3%;
-      top: 40px;
+      top: 25px;
       font-size: 1.5em;
       color: #fff;
       text-decoration: none;
-    }
 
-    .log {
-      position: relative;
-      display: inline-block;
-      left: 85%;
+      &:hover {
+        color: #720eff;
+      }
+    }
+    .nav_list .go {
       top: 25px;
       font-size: 1em;
-      color: #fff;
       text-decoration: none;
-    }
-  }
-  #container {
-    position: relative;
-    display: block;
-    top: 50px;
-    width: 100%;
-    height: 50vh;
+      color: #fff;
 
-    #content {
-      position: relative;
-      display: block;
-      width: 80%;
-      margin: auto;
+      &:hover {
+        color: #720eff;
+      }
     }
   }
+  /*typography*/
   h1 {
     font-size: 2em;
     text-align: center;
     color: #414141;
   }
-  .article_title {
-    display: block;
-    margin: 1em;
-    font-size: 1.25em;
-    text-decoration: none;
-    color: #414141;
-  }
-  .tag_name {
-    text-decoration: none;
-  }
-  .article_body {
-    position: relative;
-    display: block;
-    top: 50px;
-    line-height: 1.5em;
-    margin: auto;
-    width: 60%;
-  }
   h3 {
     font-size: 1.25em;
   }
-  .comments_container {
+  a {
+    color: #720eff;
+  }
+  /*buttons*/
+  .btn {
+    background-color: #720eff;
+    color: #fff;
+    padding: .5em 1em;
+    border-radius: 1px;
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+  /*article index*/
+  #article_list_container {
     position: relative;
     display: block;
     top: 50px;
+    width: 100%;
+    height: 95vh;
+
+    #content {
+      position: relative;
+      display: block;
+      width: 60%;
+      margin: 25px auto;
+
+      #articles {
+        position: relative;
+        display: block;
+        top: 50px;
+
+        .article_title {
+          display: block;
+          top: 25px;
+          margin: 1em;
+          font-size: 1.25em;
+          text-decoration: none;
+          color: #414141;
+        }
+      }
+    }
+  }
+  /*article page*/
+  .show-article {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding: 1em;
+
+    .article_body {
+      position: relative;
+      display: block;
+      top: 25px;
+      line-height: 1.5em;
+      width: 100%;
+      margin: 1em;
+    }
+    .article_action {
+      position: relative;
+      display: inline-block;
+      margin-top: 3em;
+      text-decoration: none;
+      margin-left: 2em;
+    }
+    .tags {
+      position: relative;
+      display: block;
+      top: 1em;
+      text-align: right;
+    }
+    .tag_name {
+      position: relative;
+      display: inline-block;
+      margin-top: 2em;
+      text-decoration: none;
+      font-size: .75em;
+    }
+  }
+  hr.separator {
+    width: 100%;
+    border-bottom: 1px solid #414141;
+  }
+  /*comments*/
+  .show-comments {
+    position: relative;
+    display: block;
+    top: 50px;
+    padding: 2em;
+
+    .comments_form {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+
+      .form_label {
+        position: relative;
+        font-size:.75em;
+      }
+      .text_field {
+        font-size: 1em;
+        width: 300px;
+        height: 30px;
+        border: 1px solid #aaa;
+        margin-bottom: 1em;
+        border-radius: 5px;
+      }
+      .text_area {
+        font-size: 1em;
+        width: 500px;
+        height: 300px;
+        border: 1px solid #aaa;
+        line-height: 1.25em;
+        margin-bottom: 1em;
+        border-radius: 5px;
+      }
+    }
+    .comment_container {
+      position: relative;
+      display: block;
+      margin: 2em;
+
+      .comment-author {
+        line-height: 1.5em;
+        font-size: .75em;
+      }
+      .comment-body {
+        line-height: 2em;
+        font-size: 1em;
+      }
+      .comment-time {
+        line-height: 1em;
+        font-size: .5em;
+      }
+    }
   }
   .article_form {
     position: relative;
@@ -154,6 +259,12 @@ body {
       margin-bottom: 2em;
       line-height: 1.25em;
     }
+  }
+  .footer {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: .75em;
   }
 }
 
