@@ -1,12 +1,18 @@
+
+<h4>Post a Comment</h4>
+<p class="be-nice">(keep it frosty!)</p>
 <div class="comments_form">
-  <h4>Post a Comment</h4>
-    <%= form_for [ @article, @comment ] do |f| %>
-      <%= f.label :author_name, "Your Name", class: 'form_label' %><br />
-      <%= f.text_field :author_name, class: 'text_field' %>
-      <br />
-      <%= f.label :body, "Your Comment", class: 'form_label' %><br />
-      <%= f.text_area :body, class: 'text_field' %>
-      <br />
-      <%= f.submit 'Submit', class: 'btn' %>      
-    <% end %>
+  <%= form_for [ @article, @comment ] do |f| %>
+    <div class="form-group">
+      <%= f.label :author_name, "Your Name", class: 'comment author' %><br />
+      <%= f.text_field :author_name, class: 'text-field' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :body, "Your Comment", class: 'comment text' %><br />
+      <%= f.text_area :body, class: 'text-field' %>
+    </div>
+    <div>
+      <%= f.submit :submit, class: 'btn' %> 
+    </div>
+  <% end %>
 </div>

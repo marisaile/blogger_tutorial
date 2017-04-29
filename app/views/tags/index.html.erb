@@ -1,8 +1,7 @@
 <h1>All Tags</h1>
-<ul id="tag">
+<hr class="separator">
+<ul class="tag_index">
 	<% @tags.each do |tag| %>
-		<li><%= link_to tag.name, tag_path(tag), class: 'tag_name', id: "tag_#{tag.id}" %><br />
-			<%= link_to 'delete', tag_path(tag), method: :delete, data: {confirm: "Are you sure?"} %>
-		</li>
+		<li><%= link_to tag.name, tag_path(tag), class: 'tag_destination', id: "tag_#{tag.id}" %></li>
 	<% end %>
 </ul>

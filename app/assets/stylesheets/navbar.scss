@@ -1,0 +1,32 @@
+.navbar {
+  position: relative;
+  display: block;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #270125;
+  color: #F5F5F5;
+
+  .blog_name {
+    position: relative;
+    display: inline-block;
+    top: 50px;
+    font-size: 1.5em;
+    color: #F5F5F5;
+    text-decoration: none;
+
+    &:hover {
+      color: #F106EF;
+    }
+  }
+  .nav_list .go {
+    top: 50px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #F5F5F5;
+
+    &:hover {
+      color: #F106EF;
+    }
+  }
+}

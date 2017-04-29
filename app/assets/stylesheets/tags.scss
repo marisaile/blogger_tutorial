@@ -1,4 +1,29 @@
-/*// Place all the styles related to the tags controller here.
+// Place all the styles related to the tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-*/
+.tags {
+	position: relative;
+	display: block;
+	top: 1em;
+	text-align: right;
+}
+.tag_name {
+	position: relative;
+	display: inline-block;
+	margin-top: 2em;
+	text-decoration: none;
+	font-size: .85em;
+}
+.tag_index {
+	position: relative;
+	color: #414141;
+	font-size: 1.1em;
+	width: 90%;
+	margin: 25px auto;
+
+	li {
+		position: relative;
+		display: inline-block;
+		margin-left: 30px;
+	}
+}

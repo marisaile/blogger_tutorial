@@ -11,21 +11,34 @@
   <body>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
+        <!-- <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div> -->
         <%= link_to "My Super Fancy Blog", articles_path, class: 'navbar-brand blog_name' %>
         <ul class="nav navbar-nav navbar-right nav_list">
+          <li>
+            <%= link_to "browse by tag", tags_path, class: "go" %>
+          </li>
+          <li>
+            <% if logged_in? %>
+              <%= link_to "new post", new_article_path, class: "go" %>
+            <% end %>
+          </li>
+          <li>
+            <% if logged_in? %>
+              <%= link_to "all authors", authors_path, class: "go" %>
+            <% end %>
+          </li>
           <li>
             <% if logged_in? %>              
               <%= link_to "logout", logout_path, class: "go" %>
             <% else %>
               <%= link_to "login", login_path, class: "go" %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "tags", tags_path, class: "go" %>
-          </li>
-          <li>
-            <% if logged_in? %>
-              <%= link_to "new post", new_article_path, class: "go" %>
             <% end %>
           </li>
         </ul>
@@ -34,7 +47,7 @@
     <!-- <div class="jumbotron">
       <div class="container"></div>
     </div> -->
-  	<p class="flash"><%= flash.notice %></p>
+  	<!-- <p class="flash"><%= flash.notice %></p> -->
     <div id="article_list_container">
       <div id="content">
         <%= yield %>
@@ -44,6 +57,10 @@
       <% if logged_in? %>
         <%= "logged in as #{current_user.email}"%>
       <% end %>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>test</li>
+        <li>test</li>
+      </ul> -->
     </div>
   </body>
 </html>
